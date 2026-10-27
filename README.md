@@ -9,8 +9,10 @@ Kelemen Gyöngyvér coach leadgyűjtő oldala. Statikus HTML, CSS és vanilla JS
 ## Futtatás helyben
 
 ```bash
-python3 -m http.server 8080
+python3 scripts/dev-server.py
 ```
+
+Ez a `python3 -m http.server` gyorsítótár nélküli változata (`Cache-Control: no-store`), így a CSS- és JS-módosítások újratöltés után azonnal látszanak.
 
 Ezután nyisd meg: http://localhost:8080. Az oldal abszolút útvonalakat használ (`/assets/...`), ezért mindig a repó gyökeréből szolgáld ki, ne `file://`-ból.
 
@@ -40,6 +42,7 @@ assets/img/              portrék AVIF és JPEG formátumban, OG-kép, nap motí
 docs/gtm-setup.md        GTM- és GA4-beállítás lépésről lépésre
 docs/gtm-container.json  importálható GTM-konténer
 scripts/portrait-images.sh  portrék újragenerálása (ffmpeg)
+scripts/dev-server.py    helyi szerver gyorsítótár nélkül
 ```
 
 ## Tartalom szerkesztése
