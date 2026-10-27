@@ -101,8 +101,14 @@ Amikor az új oldal leváltja a régit:
 2. A `404.html`-ben cseréld az összes `/elemen-hu/` előtagot `/`-re.
 3. Állítsd be a lenti DNS-rekordokat, és a DNS átállása után kapcsold be az **Enforce HTTPS** opciót.
 4. Ajánlott: **Settings → Pages → Verified domains**, hogy más ne foglalhassa le a domaint.
+5. Cseréld vissza a teljes URL-eket: minden `https://elemen-hu.github.io/elemen-hu/` legyen `https://elemen.hu/`, a `config/site.config.js` `siteUrl` értéke pedig `https://elemen.hu`. Érintett fájlok: `index.html`, `adatkezeles/index.html`, `sutik/index.html` (canonical, hreflang, `og:url`, `og:image`, JSON-LD), `sitemap.xml`, `robots.txt`. Egy paranccsal:
 
-A `canonical`, az `og:` meta tagek, a `sitemap.xml` és a JSON-LD már most is az `https://elemen.hu/` címre mutatnak, ezeken nem kell változtatni.
+   ```bash
+   sed -i '' 's#https://elemen-hu.github.io/elemen-hu/#https://elemen.hu/#g' index.html adatkezeles/index.html sutik/index.html sitemap.xml robots.txt
+   ```
+
+   Ezek most azért mutatnak a github.io-s címre, mert a Messenger és a Facebook az `og:url` címre visz, és az `og:image` képet mutatja. Amíg az elemen.hu a régi oldal, ezeknek a github.io-s címre kell mutatniuk.
+6. A Facebook Sharing Debuggerben (developers.facebook.com/tools/debug) kérd le újra az elemen.hu-t (**Scrape Again**), hogy a Messenger az új előnézetet mutassa.
 
 ### DNS (a domain szolgáltatójánál, nem én állítom be)
 

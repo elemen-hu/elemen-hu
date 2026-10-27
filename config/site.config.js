@@ -4,7 +4,7 @@
  * A "TODO" értékű elem kikapcsolja a hozzá tartozó funkciót, az oldal ettől még működik.
  */
 window.SITE_CONFIG = {
-  siteUrl: 'https://elemen.hu',
+  siteUrl: 'https://elemen-hu.github.io/elemen-hu',
 
   form: {
     // 'web3forms' vagy 'formspree'

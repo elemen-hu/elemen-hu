@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elemen.hu/sitemap.xml
+Sitemap: https://elemen-hu.github.io/elemen-hu/sitemap.xml
