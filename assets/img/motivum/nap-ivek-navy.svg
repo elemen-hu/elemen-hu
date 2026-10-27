@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" role="img" aria-label="Felkelő nap vékony ívekkel a horizont felett, mélykék színben">
+<path d="M280 300 A80 80 0 0 1 440 300 Z" fill="#153448"/>
+<path d="M210 300 A150 150 0 0 1 510 300" fill="none" stroke="#153448" stroke-width="3" stroke-opacity="0.9"/>
+<path d="M150 300 A210 210 0 0 1 570 300" fill="none" stroke="#153448" stroke-width="3" stroke-opacity="0.55"/>
+<path d="M90 300 A270 270 0 0 1 630 300" fill="none" stroke="#153448" stroke-width="3" stroke-opacity="0.3"/>
+<path d="M0 300 H720" stroke="#153448" stroke-width="3"/>
+</svg>

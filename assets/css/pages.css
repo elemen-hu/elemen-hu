@@ -1,0 +1,158 @@
+/* Oldalszintű elrendezés: hero, Rólam, jogi oldalak, 404. */
+
+/* Hero: két oszlop, balra szöveg, jobbra portré boltívben. Mobilon a szöveg felül. */
+
+.hero {
+  padding-block: var(--hero-pad);
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.hero h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+}
+
+.hero__text > * + * {
+  margin-top: var(--space-6);
+}
+
+.hero__text .subtitle {
+  margin-top: var(--space-8);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-8);
+  padding-top: var(--space-4);
+}
+
+/* Felismerés szekció */
+
+.insight > * + * {
+  margin-top: var(--space-6);
+}
+
+.insight + .statement {
+  margin-block: var(--space-12);
+}
+
+/* Hogyan dolgozom */
+
+.method__intro {
+  margin-bottom: var(--space-16);
+}
+
+.method__subhead {
+  margin: var(--space-16) 0 var(--space-8);
+}
+
+/* Rólam */
+
+.about__grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 2fr 3fr;
+    gap: var(--space-16);
+  }
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6) var(--space-12);
+  margin: var(--space-8) 0 0;
+  padding: var(--space-6) 0 0;
+  border-top: var(--border-width) solid var(--border-subtle);
+}
+
+.facts div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.facts dt {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--text-secondary);
+}
+
+.facts dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-bold);
+}
+
+/* Lead szekció */
+
+.lead-section .section-head .lead {
+  margin-top: var(--space-6);
+}
+
+/* Szövegoldalak (jogi oldalak, 404) */
+
+.page-head {
+  padding-block: var(--space-16) var(--space-8);
+}
+
+.prose {
+  max-width: var(--measure);
+  padding-bottom: var(--space-24);
+}
+
+.prose h2 {
+  margin: var(--space-12) 0 var(--space-4);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.prose ul {
+  padding-left: var(--space-6);
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+.prose p + ul,
+.prose ul + p {
+  margin-top: var(--space-4);
+}
+
+.todo-note {
+  padding: var(--space-4) var(--space-6);
+  border: var(--border-width) dashed var(--border-control);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.not-found {
+  padding-block: var(--space-24);
+  text-align: left;
+}
+
+.not-found > * + * {
+  margin-top: var(--space-6);
+}
