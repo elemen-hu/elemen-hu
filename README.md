@@ -154,6 +154,9 @@ A legutóbbi helyi ellenőrzés (2026. október 27.) eredménye:
 - **Display cím mobilon:** a design system nem adja meg, 44 px-re állítottam.
 - **Betűk:** a design system Google Fonts-linket ír, a brief saját hostolást. Önállóan hostolt woff2 lett (OFL-licenc), latin-ext vágással az „ő” és „ű” miatt.
 - **Új elemek:** a GYIK, a checkbox, a consent banner és a nyelvválasztó nem szerepel a design systemben. A meglévő tokenekből és szabályokból építettem őket, új szín nélkül.
+- **Világos homok háttér:** a homok szekciók háttere `#EADBC8` (`--sand-light`). Ez a design system négy színén kívüli, megrendelői kérésre (2026. október 27.) került be. A navy sáv (vélemények, lábléc) nem változott.
+- **Kisebb sarkok:** a gombok, a mezők és az állapotüzenet 4 px-es, a kapcsolati kártyák 8 px-es sarkot kaptak a design system 8 px-e és 20 px-e helyett, megrendelői kérésre.
+- **Vélemények:** az idézetek Open Sans normál vastagságúak, mert a Playfairből csak a 600-as és a 700-as vastagság van feltöltve, és a félkövér idézet túl nehéz volt.
 - **Letiltott gomb:** küldés közben sincs letiltott gomb (design system 6.1). A dupla küldést egy belső jelző akadályozza meg.
 
 ## Nyitott pontok (TODO)

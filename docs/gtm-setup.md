@@ -24,7 +24,7 @@ Az oldal betöltése óta keletkezett események (például `scroll_depth`) a `d
 | `language_switch` | Nyelvváltás a fejlécben (csak 2+ nyelv esetén) | `from`, `to` |
 | `scroll_depth` | 25, 50, 75, 90%, mindegyik egyszer | `percent` |
 
-Jelenlegi `cta_id` értékek: `header_contact`, `hero_primary`.
+Jelenlegi `cta_id` értékek: `header_contact`, `hero_primary`, `service_egyeni`, `service_uzleti`.
 
 Név, e-mail vagy telefonszám soha nem kerül a `dataLayer`-be.
 

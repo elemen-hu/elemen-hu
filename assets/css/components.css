@@ -11,7 +11,7 @@
   min-height: var(--tap-min);
   padding: var(--button-pad-y) var(--button-pad-x);
   border: var(--border-width-strong) solid var(--action);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: var(--action);
   color: var(--on-action);
   font-family: var(--font-sans);
@@ -124,7 +124,7 @@
   padding-block: var(--space-2);
   color: var(--text-primary);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-body);
+  font-size: var(--fs-nav);
   text-decoration: none;
   border-bottom: var(--border-width) solid transparent;
 }
@@ -321,14 +321,38 @@
   border-top: var(--border-width) solid var(--border-subtle);
 }
 
-@media (min-width: 640px) {
-  .service-card__areas {
-    grid-template-columns: repeat(auto-fit, minmax(var(--area-min), 1fr));
-  }
+.service-card__areas h4 {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-secondary);
 }
 
-.service-card__areas h4 {
-  margin-bottom: var(--space-2);
+.service-card__cta {
+  margin-top: auto;
+  padding-top: var(--space-6);
+}
+
+/* Címkelista: rövid témák, tördelődő sorban. */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: var(--space-1) var(--space-3);
+  background: var(--sand-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--text-primary);
 }
 
 .plain-list {
@@ -391,6 +415,46 @@
   margin-bottom: var(--space-3);
 }
 
+/* Alapelvek: számozott kártyák, hogy elváljanak az „Amit hozok” listától. */
+
+.principle-grid {
+  display: grid;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: principle;
+}
+
+@media (min-width: 1024px) {
+  .principle-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.principle {
+  padding: var(--space-8);
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  counter-increment: principle;
+}
+
+.principle::before {
+  content: "0" counter(principle);
+  display: block;
+  margin-bottom: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  line-height: 1;
+  color: var(--sand);
+}
+
+.principle h3 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  margin-bottom: var(--space-3);
+}
+
 /* 6.3 Testimonial */
 
 .testimonial-grid {
@@ -409,26 +473,27 @@
 
 .testimonial {
   padding-left: var(--space-6);
-  border-left: var(--stripe-width) solid var(--sand);
+  border-left: var(--border-width-strong) solid var(--sand);
 }
 
 .testimonial blockquote {
-  font-family: var(--font-display);
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
-  font-weight: var(--fw-bold);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body-lg);
+  font-weight: var(--fw-regular);
   color: var(--band-text);
 }
 
 .testimonial--compact blockquote {
-  font-size: var(--fs-h4);
-  line-height: var(--lh-h4);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 .testimonial figcaption {
   margin-top: var(--space-4);
   font-size: var(--fs-small);
   line-height: var(--lh-small);
+  font-weight: var(--fw-bold);
   color: var(--band-text-muted);
 }
 
@@ -438,6 +503,14 @@
 
 .more__toggle {
   list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .more__toggle {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+  }
 }
 
 .more__toggle::-webkit-details-marker {
@@ -468,6 +541,7 @@
 
 .faq {
   max-width: var(--measure);
+  margin-inline: auto;
   border-top: var(--border-width) solid var(--border-subtle);
 }
 
@@ -526,7 +600,7 @@
   padding: var(--space-8);
   background: var(--surface-card);
   border: var(--border-width) solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   /* A kártya krém felület homok szekción: a link és a másodlagos szöveg visszaáll. */
   --link: var(--slate);
   --text-secondary: var(--slate);
@@ -604,7 +678,7 @@
   background: var(--surface-card);
   color: var(--text-primary);
   border: var(--border-width) solid var(--border-control);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   font: inherit;
 }
 
@@ -722,7 +796,7 @@
   align-items: flex-start;
   padding: var(--space-4) var(--space-6);
   border: var(--border-width) solid var(--border-control);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   font-weight: var(--fw-bold);
 }
 

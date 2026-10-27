@@ -1,5 +1,16 @@
 /* Oldalszintű elrendezés: hero, Rólam, jogi oldalak, 404. */
 
+/* Desktopon a keskeny tartalomblokkok középre kerülnek, a szöveg balra zárt marad. */
+@media (min-width: 1024px) {
+  .section-head,
+  .measure,
+  .statement,
+  .method__subhead {
+    max-width: var(--measure);
+    margin-inline: auto;
+  }
+}
+
 /* Hero: két oszlop, balra szöveg, jobbra portré boltívben. Mobilon a szöveg felül. */
 
 .hero {
@@ -58,7 +69,7 @@
 }
 
 .method__subhead {
-  margin: var(--space-16) 0 var(--space-8);
+  margin-block: var(--space-16) var(--space-8);
 }
 
 /* Rólam */
