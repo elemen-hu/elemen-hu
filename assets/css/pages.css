@@ -1,13 +1,17 @@
 /* Oldalszintű elrendezés: hero, Rólam, jogi oldalak, 404. */
 
-/* Desktopon a keskeny tartalomblokkok középre kerülnek, a szöveg balra zárt marad. */
+/* Desktopon a keskeny szekciók (Kinek szól, GYIK) tartalma középre kerül, a szöveg balra zárt marad.
+   A teljes szélességű szekciókban (kártyák, rácsok) a cím balra, a rács vonalában áll. */
 @media (min-width: 1024px) {
-  .section-head,
-  .measure,
-  .statement,
-  .method__subhead {
-    max-width: var(--measure);
+  .section-head--center,
+  .insight,
+  .insight + .statement {
     margin-inline: auto;
+  }
+
+  .insight,
+  .insight + .statement {
+    max-width: var(--statement-max);
   }
 }
 
