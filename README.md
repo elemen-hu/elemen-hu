@@ -14,7 +14,7 @@ python3 scripts/dev-server.py
 
 Ez a `python3 -m http.server` gyorsítótár nélküli változata (`Cache-Control: no-store`), így a CSS- és JS-módosítások újratöltés után azonnal látszanak.
 
-Ezután nyisd meg: http://localhost:8080. Az oldal abszolút útvonalakat használ (`/assets/...`), ezért mindig a repó gyökeréből szolgáld ki, ne `file://`-ból.
+Ezután nyisd meg: http://localhost:8080. Az oldalak relatív útvonalakat használnak (`assets/...`, az aloldalakon `../assets/...`), így a github.io alatti `/elemen-hu/` almappában és a saját domain gyökerében is működnek. Kivétel a `404.html`: azt a GitHub Pages bármilyen mélységű hibás címen kiszolgálja, ezért abszolút, `/elemen-hu/` előtagú útvonalakat használ.
 
 ## Szerkezet
 
@@ -89,15 +89,20 @@ A Calendly a widget színeit futás közben a tokenekből kapja (`--action`, `--
 
 ## Deploy (GitHub Pages)
 
-Nincs build-lépés, ezért az oldal közvetlenül a `main` branch gyökeréből megy ki, GitHub Actions nem kell. A `.nojekyll` kikapcsolja a Jekyll-feldolgozást.
+Nincs build-lépés, ezért az oldal közvetlenül a `main` branch gyökeréből megy ki, GitHub Actions nem kell. A `.nojekyll` kikapcsolja a Jekyll-feldolgozást. Minden push a `main`-re pár percen belül élesedik.
 
-1. GitHub → a repó (`elemen-hu/elemen-hu`) → **Settings → Pages**.
-2. Source: **Deploy from a branch**, branch: `main`, mappa: `/ (root)`.
-3. Custom domain: `elemen.hu`. A `CNAME` fájl már a repóban van.
-4. A DNS átállása után kapcsold be az **Enforce HTTPS** opciót.
-5. Ajánlott: **Settings → Pages → Verified domains**, hogy más ne foglalhassa le a domaint.
+**Jelenleg:** https://elemen-hu.github.io/elemen-hu/ (publikus repó, Pages: `main` / `(root)`, saját domain nélkül). A repó minden fájlja (README, BRIEF.md, docs/) is elérhető ezen a címen.
 
-A GitHub Pages ingyenes csomagban csak publikus repóból működik. Ilyenkor a repó minden fájlja (README, BRIEF.md, docs/) is elérhető az elemen.hu alatt.
+### Átállás az elemen.hu-ra
+
+Amikor az új oldal leváltja a régit:
+
+1. Hozz létre a repó gyökerében egy `CNAME` fájlt, egyetlen sorral: `elemen.hu`. (Vagy Settings → Pages → Custom domain: `elemen.hu`, ez létrehozza.)
+2. A `404.html`-ben cseréld az összes `/elemen-hu/` előtagot `/`-re.
+3. Állítsd be a lenti DNS-rekordokat, és a DNS átállása után kapcsold be az **Enforce HTTPS** opciót.
+4. Ajánlott: **Settings → Pages → Verified domains**, hogy más ne foglalhassa le a domaint.
+
+A `canonical`, az `og:` meta tagek, a `sitemap.xml` és a JSON-LD már most is az `https://elemen.hu/` címre mutatnak, ezeken nem kell változtatni.
 
 ### DNS (a domain szolgáltatójánál, nem én állítom be)
 
