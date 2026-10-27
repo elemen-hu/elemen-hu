@@ -16,7 +16,7 @@
   color: var(--on-action);
   font-family: var(--font-sans);
   font-size: var(--fs-button);
-  line-height: 1;
+  line-height: var(--lh-button);
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-button);
   text-transform: uppercase;
@@ -292,10 +292,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  padding: var(--space-8);
+  padding: var(--card-pad);
   background: var(--surface-card);
   border: var(--border-width) solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: box-shadow var(--dur) var(--ease);
 }
 
@@ -305,12 +305,6 @@
 
 .service-card:hover {
   box-shadow: var(--shadow-card);
-}
-
-@media (min-width: 1024px) {
-  .service-card {
-    padding: var(--space-12);
-  }
 }
 
 .service-card__areas {
@@ -433,7 +427,7 @@
 }
 
 .principle {
-  padding: var(--space-8);
+  padding: var(--card-pad);
   background: var(--surface-card);
   border-radius: var(--radius-md);
   counter-increment: principle;
@@ -731,7 +725,7 @@
 }
 
 .lead-card {
-  padding: var(--space-8);
+  padding: var(--card-pad);
   background: var(--surface-card);
   border: var(--border-width) solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -740,18 +734,16 @@
   --text-secondary: var(--slate);
 }
 
-@media (min-width: 1024px) {
-  .lead-card {
-    padding: var(--space-12);
-  }
-}
-
 .lead-card > * + * {
   margin-top: var(--space-4);
 }
 
 .lead-card h3 + p {
   margin-top: var(--space-3);
+}
+
+.lead-card h3 + .contact-list {
+  margin-top: var(--space-6);
 }
 
 .contact-list {

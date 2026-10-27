@@ -70,6 +70,7 @@
   --fs-button: 15px;
   --fs-nav: 16px;
   --ls-button: 1px;
+  --lh-button: 1.4;
   --fw-regular: 400;
   --fw-semibold: 600;
   --fw-bold: 700;
@@ -84,6 +85,7 @@
   --border-width-strong: 3px;
   --stripe-width: 10px;
   --tap-min: 44px;
+  --card-pad: var(--space-8);
   --hairline: 1px;
   --portrait-w: 560px;
   --portrait-sm-w: 400px;
@@ -135,11 +137,14 @@
    A display mobilos méretét a design system nem adja meg: a h1 fölé, 44 px-re állítottam. */
 @media (max-width: 639px) {
   :root {
-    --fs-display: 44px;
+    --fs-display: 36px;
+    --fs-body-lg: 19px;
     --fs-h1: 36px;
     --fs-h2: 30px;
+    --fs-h3: 24px;
     --gutter: var(--space-4);
     --section-pad: var(--space-16);
-    --hero-pad: var(--space-12);
+    --hero-pad: var(--space-8);
+    --card-pad: var(--space-6);
   }
 }
