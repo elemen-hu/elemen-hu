@@ -53,10 +53,12 @@ A szöveg közvetlenül a HTML-ben van. Szekciók az `index.html`-ben, sorrendbe
 2. `#kinek`
 3. `#szolgaltatasok`
 4. `#modszer`
-5. `#rolam`
-6. `#velemenyek`
-7. `#gyik`
-8. `#kapcsolat` (lead blokk)
+5. `#amit-hozok`
+6. `#keretek` (folyamatábra)
+7. `#rolam`
+8. `#velemenyek`
+9. `#gyik`
+10. `#kapcsolat` (lead blokk)
 
 Szabályok:
 

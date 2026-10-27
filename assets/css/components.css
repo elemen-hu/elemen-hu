@@ -455,6 +455,129 @@
   margin-bottom: var(--space-3);
 }
 
+/* Címsor rövid aláhúzással (a jelenlegi elemen.hu mintájára). */
+
+.underlined::after {
+  content: "";
+  display: block;
+  width: var(--space-32);
+  margin-top: var(--space-4);
+  border-bottom: var(--border-width) solid var(--text-primary);
+}
+
+/* Nyilas lista: „Amit a közös munkába hozok” (a jelenlegi elemen.hu megoldása). */
+
+.arrow-grid {
+  display: grid;
+  gap: var(--space-12) var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .arrow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .arrow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.arrow-item {
+  position: relative;
+  padding-left: calc(var(--icon-size) + var(--space-4));
+}
+
+.arrow-item__icon {
+  position: absolute;
+  top: var(--space-1);
+  left: 0;
+  color: var(--action);
+}
+
+.arrow-item h3 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+}
+
+.arrow-item p {
+  margin-top: var(--space-3);
+}
+
+/* Folyamatábra: „Az együttműködés keretei”. Mobilon függőleges, desktopon vízszintes idővonal. */
+
+.flow {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: flow;
+}
+
+.flow__step {
+  position: relative;
+  padding-left: calc(var(--tap-min) + var(--space-6));
+  counter-increment: flow;
+}
+
+.flow__step::before {
+  content: counter(flow);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: 50%;
+  background: var(--action);
+  color: var(--on-action);
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+}
+
+/* Összekötő vonal a lépések között */
+.flow__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: var(--tap-min);
+  bottom: calc(-1 * var(--space-8));
+  left: calc(var(--tap-min) / 2 - var(--hairline));
+  border-left: var(--border-width) solid var(--action);
+}
+
+.flow__step h3 {
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 1024px) {
+  .flow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .flow__step {
+    padding-left: 0;
+    padding-top: calc(var(--tap-min) + var(--space-6));
+  }
+
+  .flow__step:not(:last-child)::after {
+    top: calc(var(--tap-min) / 2 - var(--hairline));
+    bottom: auto;
+    left: var(--tap-min);
+    right: calc(-1 * var(--space-8));
+    border-left: 0;
+    border-top: var(--border-width) solid var(--action);
+  }
+}
+
 /* 6.3 Testimonial */
 
 .testimonial-grid {
@@ -502,13 +625,24 @@
 }
 
 .more__toggle {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: var(--tap-min);
+  color: var(--link);
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
   list-style: none;
+}
+
+.more__toggle:hover {
+  color: var(--text-primary);
 }
 
 @media (min-width: 1024px) {
   .more__toggle {
-    display: flex;
-    width: fit-content;
     margin-inline: auto;
   }
 }

@@ -72,8 +72,10 @@
   margin-bottom: var(--space-16);
 }
 
-.method__subhead {
-  margin-block: var(--space-16) var(--space-8);
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
 }
 
 /* Rólam */
@@ -117,6 +119,11 @@
   font-size: var(--fs-h3);
   line-height: var(--lh-h3);
   font-weight: var(--fw-bold);
+}
+
+.facts--flow {
+  margin-top: var(--space-12);
+  border-top-color: var(--text-primary);
 }
 
 /* Lead szekció */
